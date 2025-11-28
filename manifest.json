@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "MUFG Intime IPO v3.0 | Auto Submit and Store IPO Results",
+  "version": "3.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

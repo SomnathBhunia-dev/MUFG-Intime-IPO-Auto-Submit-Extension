@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUFG Intime IPO</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="material-icons logo-icon">assignment_turned_in</span>
+        <h1>MUFG Intime IPO</h1>
+      </div>
+      <a href="https://in.mpms.mufg.com/Initial_Offer/public-issues.html" target="_blank" class="icon-button"
+        title="Visit Page">
+        <span class="material-icons">open_in_new</span>
+      </a>
+    </header>
+
+    <main class="app-content">
+      <div class="card input-card">
+        <h2>Submit Your ID</h2>
+        <div class="input-group">
+          <input type="text" id="ids" placeholder=" " autocomplete="off">
+          <label for="ids">Enter your ID</label>
+          <div class="input-border"></div>
+        </div>
+        <button id="start" class="btn-primary">
+          <span class="material-icons">send</span>
+          Submit
+        </button>
+      </div>
+
+      <div class="results-section">
+        <h3>Stored Results</h3>
+        <div id="results" class="results-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
