@@ -2,8 +2,8 @@ document.getElementById("start").addEventListener("click", () => {
   // Get the raw data from the textarea
   const rawData = document.getElementById("ids").value;
 
-  // Extract the "GROWW" IDs using the extract logic
-  const ids = extractGrowwIds(rawData);
+ // Extract the broker IDs using the extract logic
+  const ids = extractBrokerIds(rawData);
   console.log(ids);
   // Send the extracted IDs to the background script for further processing
   if (ids.length > 0) {
@@ -11,18 +11,16 @@ document.getElementById("start").addEventListener("click", () => {
       chrome.runtime.sendMessage({ type: "processIds", ids });
     });
   } else {
-    alert("No valid GROWW IDs found.");
+    alert("No valid broker IDs found.");
   }
-  // displayResults();
 });
 
-// The extract function remains the same
-function extractGrowwIds(data) {
-  const regex = /GROWW[a-zA-Z0-9]{11}/g;
+// The extract function now supports Groww and Zerodha IDs
+function extractBrokerIds(data) {
+  const regex = /(GROWW[a-zA-Z0-9]{11})|([a-zA-Z]{2}\d{12})/g;
   const ids = data.match(regex);
   return ids || [];
 }
-// const resultsDiv = document.getElementById("results");
 
 document.addEventListener("DOMContentLoaded", () => {
   const resultsDiv = document.getElementById("results");
@@ -86,4 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
       resultsDiv.innerHTML = "<p>No results found.</p>";
     }
   });
+
 });
